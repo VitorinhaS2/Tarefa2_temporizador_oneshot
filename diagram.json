@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "author": "Vitória Cavalcanti",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 73.2,
+      "left": -101.8,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 121.2,
+      "left": -101.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 159.6,
+      "left": -101.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 253.55,
+      "left": -105.6,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 234.35,
+      "left": -105.6,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 272.75,
+      "left": -105.6,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 6.2,
+      "left": -134.4,
+      "attrs": { "color": "blue" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "btn1:1.r", "pico:GND.1", "black", [ "v9.6", "h67.4", "v3.25" ] ],
+    [ "btn1:2.r", "pico:GP5", "blue", [ "v19.4", "h48.2", "v12.85" ] ],
+    [ "led1:A", "pico:GP11", "blue", [ "h48", "v32.05" ] ],
+    [ "led2:A", "pico:GP12", "red", [ "v0", "h48", "v-28.8" ] ],
+    [ "led3:A", "pico:GP13", "green", [ "v0", "h57.6", "v-76.8" ] ],
+    [ "led1:C", "r4:1", "black", [ "v0", "h-38", "v115.2" ] ],
+    [ "led2:C", "r3:1", "black", [ "v0", "h-38", "v96" ] ],
+    [ "led3:C", "r5:1", "black", [ "v0", "h-38", "v76.8" ] ],
+    [ "r4:2", "pico:GND.4", "black", [ "v0", "h37.2", "v-67.2" ] ],
+    [ "r3:2", "pico:GND.4", "black", [ "v0", "h37.2", "v-76.8" ] ],
+    [ "r5:2", "pico:GND.4", "black", [ "v0", "h37.2", "v-96" ] ]
+  ],
+  "dependencies": {}
+}
